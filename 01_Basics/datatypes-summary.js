@@ -64,3 +64,33 @@ console.log(typeof anotherId);
 // https://262.ecma-international.org/5.1/#sec-11.4.3
 
 
+//++++++++++++++++++++++++++++//
+
+//STACK (Primitive), HEAP(Non-Primitive)
+
+let myYoutubeName = "histeshchoudharydotcom"
+
+let anothername= myYoutubeName
+//in line 73 anothername will be given a copy of myYoutube name and not the orignal so when changes occur in line 75, orignal myYoutubename is still not changed and is previous value, thats how stack works.
+anothername = "chaiaurcode"
+
+console.log(myYoutubename);
+console.log(anothername);
+
+let userOne = {
+    email: "user@gmail.com",
+    upi : "user@ybl"
+}
+
+let userTwo = userOne
+
+userTwo.email = "hitesh@google.com"
+
+console.log(userOne.email);
+console.log(userTwo.email);
+
+//userOne, userTwo are in stack but they refer to THE SAME OBJECT STORED IN HEAP AS NON PRIMITIVE ARE STORED IN HEAP AND WORK DONE BY ANY OF THEM WILL REFLECT CHANGES FOR BOTH AS NO COPY IS CREATED//
+
+
+
+
