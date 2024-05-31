@@ -33,16 +33,3 @@ newDate.toLocaleString('default', {
     weekday:"long",
 })
 //to customize the standard date returned by toLocaleString function...'default' specifies internationalisation type, baki fir kya chahiye and kaisa chahiye in bracket
-
-
-
-
-
-
-
-
-
-
-
-
-
