@@ -43,3 +43,5 @@ JsUser.greetingTwo = function(){
 
 console.log(JsUser.greeting());
 console.log(JsUser.greetingTwo());
+
+//this was for object literals, 04_objects is for singleton constructor
