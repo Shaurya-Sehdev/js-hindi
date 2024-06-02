@@ -68,3 +68,40 @@ users[1].email// way to access object then value from array
 // console.log(Object.entries(tinderUser));// creates array ke anther arrays of key-value pairs
 
 // console.log(tinderUser.hasOwnProperty('isLoggedIn')); tells whether a particular property or key is included in obj
+
+
+//Destructuring of objects, react mai object milega and usko destructure kar ke valuues use even though you can directly use those values as well
+
+const course = {
+    coursename: "js in hindi",
+    price: "999",
+    courseInstructor: "hitesh"
+}
+
+// course.courseInstructor
+
+const {courseInstructor: instructor} = course// a way to rename or shorten the name of a particular attribute of an object, so that whole course.courseInstructor na likhna pade, this is destructuring and CURLY BRACES { } ARE USED FOR DESCTRUCTURING SO THAT THEY CAN BE DIRECTLY USED.
+
+// console.log(courseInstructor);
+console.log(instructor);
+
+//API is the waiter jo aapke kaam karega from the menu provided and hame nhi pata ke vo kaise ye karta hai,  Api is jo values aati hain backend se usko aap kaise likhte hain, values aati hain json mai..json object hi hai and looks like:-
+//in json keys and values both are in ""
+/*{
+         "name": "hitesh",
+         "coursename": "js in hindi",
+         "price": "free"
+     }*/
+
+// Above in an API holding differnt key value pairs which can be fetched using different functions, people even convert apis to objects to fetch values
+
+// Below API objects ke format ki jagah array ke format mai bhi milti hain ARRAY OF OBJECT LEKIN, ARRAY mai loop lagake kaise objects se value leni will see later
+[
+    {},
+    {},
+    {}
+]
+
+//https://randomuser.me/ to see differnt APIS
+
+//https://jsonformatter.org/ to beautify the API code to trees to see kitne object, kitne array and how to handle the data.
