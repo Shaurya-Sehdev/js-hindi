@@ -215,7 +215,8 @@ function newGame() {
 ```
 ## project 4 SOLN 2 SHAURYA SEHDEV OWN CODE
 ```javascript SOLN 2 SHAURYA SEHDEV OWN CODE
-const form = document.querySelector('form');
+document.querySelector('#guessField').value);
+  if (number == guess) {const form = document.querySelector('form');
 const number = Math.floor(Math.random() * 100) + 1;
 prev_guesses = document.querySelector('.guesses');
 prev_guesses.innerHTML = 0;
@@ -225,18 +226,41 @@ form.addEventListener('submit', function (e) {
   // Your submit event handler code here
   e.preventDefault(); // Prevent the default form submission behavior
   console.log('Random number between 1 and 100: ' + number);
-  const guess = parseInt(document.querySelector('#guessField').value);
-  if (number == guess) {
-    const result = document.querySelector('.lowOrHi');
-    result.innerHTML = `you have got the right guess ${guess}`;
-  } else {
-      if(prev_guesses.innerHTML<10){
-    prev_guesses.innerHTML = parseInt(prev_guesses.innerHTML) + 1;
+  const guess = parseInt(
+    const result = documeconst form = document.querySelector('form');
+const number = Math.floor(Math.random() * 100) + 1;
+const prev_guesses = document.querySelector('.guesses');
+prev_guesses.innerHTML = 0;
+const max_guesses = 10;
+const guesses_rem = document.querySelector('.lastResult');
+guesses_rem.innerHTML = max_guesses;
 
-    guesses_rem.innerHTML = parseInt(guesses_rem.innerHTML) - 1;
-      }
+form.addEventListener('submit', function (e) {
+  e.preventDefault(); // Prevent the default form submission behavior
+  console.log('Random number between 1 and 100: ' + number);
+  const guess = parseInt(document.querySelector('#guessField').value);
+  const result = document.querySelector('.lowOrHi');
+
+  if (number === guess) {
+    result.innerHTML = `You have got the right guess: ${guess}`;
+  } else {
+    if (guess < number) {
+      result.innerHTML = `Too low! Guess higher.`;
+    } else if (guess > number) {
+      result.innerHTML = `Too high! Guess lower.`;
+    }
+
+    if (parseInt(prev_guesses.innerHTML) < max_guesses - 1) {
+      prev_guesses.innerHTML = parseInt(prev_guesses.innerHTML) + 1;
+      guesses_rem.innerHTML = max_guesses - parseInt(prev_guesses.innerHTML);
+    } else {
+      result.innerHTML = `Game over! The number was ${number}.`;
+      form.querySelector('#guessField').disabled = true;
+      form.querySelector('button[type="submit"]').disabled = true;
+    }
   }
 });
+
 
 ```
 
