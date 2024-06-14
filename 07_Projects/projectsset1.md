@@ -64,6 +64,7 @@ form.addEventListener('submit', function (e) {
 
 
 ```
+## project 2 solution 2 Shaurya Sehdev
 ``` Javascript SOLN 2
 const form = document.querySelector('form');
 
@@ -113,7 +114,7 @@ setInterval(function () {
 
 ```
 
-## project 4 solution
+## project 4 solution 1 Hitesh Chaudhary
 
 
 ```javascript
@@ -212,6 +213,7 @@ function newGame() {
 
 
 ```
+## project 4 SOLN 2 SHAURYA SEHDEV OWN CODE
 ```javascript SOLN 2 SHAURYA SEHDEV OWN CODE
 const form = document.querySelector('form');
 const number = Math.floor(Math.random() * 100) + 1;
