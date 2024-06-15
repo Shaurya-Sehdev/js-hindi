@@ -177,7 +177,7 @@ function checkGuess(guess) {
 
 function displayGuess(guess) {
   userInput.value = '';
-  guessSlot.innerHTML += `${guess}, `;
+  guessSlot.innerHTML = `${prevGuess}, `;
   numGuess++;
   remaining.innerHTML = `${11 - numGuess} `;
 }
