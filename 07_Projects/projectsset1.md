@@ -327,3 +327,30 @@ document.querySelector('#stop').addEventListener('click', stopChangingColor);
 
 
 ```
+# Project 6 Shaurya Solution
+
+```javascript
+const randomColor = function () {
+  const hex = '0123456789ABCDEF';
+  let color = '#';// because color is a string therefore we can use + to concatenate and create a color else we could generate a whole decimal range randomly and conver it to hex using toString like const randomColor = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+
+  for (let i = 0; i < 6; i++) {
+      color += hex[Math.floor(Math.random() * 16)];
+  }
+  return color;
+};
+ function colorChanger(){
+  document.querySelector('body').style.backgroundColor = randomColor();
+}
+let yo_change;//global variable accesible by everyone
+document.querySelector('#start').addEventListener('click',function(e){
+e.preventDefault
+if(yo_change === null){
+yo_change = setInterval(colorChanger, 1000);}
+})
+
+document.querySelector('#stop').addEventListener('click', function(e){
+  e.preventDefault
+  clearInterval(yo_change)
+  yo_change = null; //cleans the code and makes memory management more efficent so that overlapping on the start button does not occur cause start se color changing now will only work when stop has been pressed before.
+})
