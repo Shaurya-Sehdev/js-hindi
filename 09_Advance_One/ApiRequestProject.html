@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API</title>
+</head>
+<body style="background-color: #212121;">
+    <div>0 UNSENT Client has been created. open() not called yet.
+        1 OPENED open() has been called.
+        2 HEADERS_RECEIVED send() has been called, and headers and status are available.
+        3 LOADING Downloading; responseText holds partial data.
+        4 DONE The operation is complete.</div>
+    <div style="margin-top: 100px; margin-bottom: 100px;">
+        <a class="button" href="#" target="_self" type="button" style="border: red; background-color: rgb(0, 119, 254); color: rgb(255, 98, 0); padding: 50px;">Button</a>
+    </div>
+    <div></div>
+    <div class="insert" style="color: yellow;"></div>
+    <div class="insert2" style="color: yellow;">
+        <img src="" alt="">
+        <!-- above 3 lines are spaces to insert stuff from script using document and query selector -->
+    </div>
+</body>
+<script>
+    const requestUrl = 'https://api.github.com/users/hiteshchoudhary';
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', requestUrl);
+    xhr.onreadystatechange = function() {
+        console.log(xhr.readyState);
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            const data = JSON.parse(this.responseText);
+            console.log(typeof data);
+            console.log(data.followers);
+            const button = document.querySelector('.button');
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                const newWindow = window.open('', '_blank', 'width=600,height=400');//creates a window which will open upon clicking in new blank tab
+                /* imp line*/newWindow.document.write(`
+                    <!DOCTYPE html>
+                    <html lang="en">
+                    <head>
+                        <meta charset="UTF-8">
+                        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                        <title>Follower Count and Avatar</title>
+                    </head>
+                    <body style="background-color: #212121; color: yellow;">
+                        <div>Followers: ${data.followers}</div>
+                        <div><img src="${data.avatar_url}" alt="Avatar" style="width: 100px; height: 100px;"></div>
+                    </body>
+                    </html>
+                `);
+            });
+        }
+    };
+    xhr.send();
+</script>
+</html>
